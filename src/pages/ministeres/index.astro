@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const ministries = [
+  {
+    title: "Ministère de l'Économie",
+    minister: "Dr. Aboubakar Nacanabo",
+    description: "Gestion de l'économie et des finances publiques",
+    link: "/ministeres/economie"
+  },
+  {
+    title: "Ministère de l'Éducation",
+    minister: "Dr. Joseph André Ouédraogo",
+    description: "Développement du système éducatif",
+    link: "/ministeres/education"
+  },
+  {
+    title: "Ministère de la Santé",
+    minister: "Dr. Robert Lucien Jean-Claude Kargougou",
+    description: "Politique de santé publique",
+    link: "/ministeres/sante"
+  },
+  {
+    title: "Ministère de l'Agriculture",
+    minister: "Dr. Dénis Ouédraogo",
+    description: "Développement agricole et sécurité alimentaire",
+    link: "/ministeres/agriculture"
+  }
+];
+---
+
+<Layout title="Ministères">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Ministères du Burkina Faso</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {ministries.map(ministry => (
+        <a href={ministry.link} class="block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h2 class="text-2xl font-bold mb-2">{ministry.title}</h2>
+          <p class="text-gray-600 mb-4">Ministre: {ministry.minister}</p>
+          <p class="text-gray-700">{ministry.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>

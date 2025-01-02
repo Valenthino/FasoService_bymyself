@@ -1,0 +1,89 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Site officiel du gouvernement du Burkina Faso" } = Astro.props;
+import Navigation from '../components/Navigation.astro';
+import OfficialBanner from '../components/OfficialBanner.astro';
+import MainNavigation from '../components/MainNavigation.astro';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} - Gouvernement du Burkina Faso</title>
+	</head>
+	<body class="bg-light">
+		<OfficialBanner />
+		<header class="bg-accent text-white">
+			<div class="container mx-auto px-4">
+				<nav class="flex justify-between items-center h-20">
+					<div class="flex items-center space-x-4">
+						<a href="/" class="flex items-center space-x-3">
+							<img src="/logo.svg" alt="Armoiries du Burkina Faso" class="h-16" />
+							<span class="font-bold text-xl">Burkina Faso</span>
+						</a>
+					</div>
+					<div class="hidden md:flex space-x-6">
+						<a href="/" class="hover:text-secondary">Accueil</a>
+						<a href="/actualites" class="hover:text-secondary">Actualités</a>
+						<a href="/contact" class="hover:text-secondary">Contact</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<MainNavigation />
+
+		<slot />
+
+		<footer class="bg-primary text-white mt-12">
+			<div class="container mx-auto px-4 py-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div>
+						<h3 class="font-bold text-lg mb-4">Contact</h3>
+						<ul class="space-y-2">
+							<li>Ouagadougou, Burkina Faso</li>
+							<li>Téléphone: +226 XX XX XX XX</li>
+							<li>Email: contact@gov.bf</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-bold text-lg mb-4">Services</h3>
+						<ul class="space-y-2">
+							<li><a href="/services/citoyens" class="hover:text-secondary">Services aux citoyens</a></li>
+							<li><a href="/services/entreprises" class="hover:text-secondary">Services aux entreprises</a></li>
+							<li><a href="/services/non-residents" class="hover:text-secondary">Non-résidents</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-bold text-lg mb-4">À propos</h3>
+						<ul class="space-y-2">
+							<li><a href="/a-propos" class="hover:text-secondary">À propos du Burkina Faso</a></li>
+							<li><a href="/gouvernement" class="hover:text-secondary">Le gouvernement</a></li>
+							<li><a href="/publications" class="hover:text-secondary">Publications</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-bold text-lg mb-4">Liens rapides</h3>
+						<ul class="space-y-2">
+							<li><a href="/actualites" class="hover:text-secondary">Actualités</a></li>
+							<li><a href="/evenements" class="hover:text-secondary">Événements</a></li>
+							<li><a href="/emplois" class="hover:text-secondary">Offres d'emploi</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="border-t border-gray-700 mt-8 pt-8 text-center">
+					<p>&copy; {new Date().getFullYear()} Gouvernement du Burkina Faso. Tous droits réservés.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

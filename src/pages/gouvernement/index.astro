@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { currentGovernment } from '../../data/government';
+
+const governmentStructure = [
+  {
+    title: "Président de la Transition",
+    name: currentGovernment.president.name,
+    role: "Chef de l'État",
+    link: "/gouvernement/president"
+  },
+  {
+    title: "Premier Ministre",
+    name: "Dr Apollinaire Joachim KYÉLEM de Tambèla",
+    role: "Chef du Gouvernement",
+    description: "Coordonne l'action gouvernementale et assure la mise en œuvre des politiques nationales"
+  }
+];
+
+const keyPriorities = currentGovernment.priorities;
+
+const ministries = [
+  {
+    name: "Ministère de l'Économie",
+    minister: "Dr. Aboubakar Nacanabo",
+    link: "/ministeres/economie"
+  },
+  {
+    name: "Ministère de l'Éducation",
+    minister: "Dr. Joseph André Ouédraogo",
+    link: "/ministeres/education"
+  },
+  {
+    name: "Ministère de la Défense",
+    minister: "Col. Kassoum COULIBALY",
+    link: "/ministeres/defense"
+  },
+  {
+    name: "Ministère de la Justice",
+    minister: "Me Edasso Rodrigue BAYALA",
+    link: "/ministeres/justice"
+  }
+];
+---
+
+<Layout title="Le Gouvernement">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-primary">Le Gouvernement du Burkina Faso</h1>
+
+    <!-- Executive Leadership -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6 text-accent">Direction Exécutive</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {governmentStructure.map(leader => (
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">{leader.title}</h3>
+            <p class="text-lg mb-2">{leader.name}</p>
+            <p class="text-gray-600 mb-4">{leader.role}</p>
+            {leader.description && <p class="text-gray-700">{leader.description}</p>}
+            {leader.link && (
+              <a href={leader.link} class="text-accent hover:underline">
+                En savoir plus →
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Government Priorities -->
+    <section class="mb-12 bg-light p-8 rounded-lg">
+      <h2 class="text-2xl font-bold mb-6 text-accent">Priorités du Gouvernement</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {keyPriorities.map(priority => (
+          <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-gray-800">{priority}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Ministries -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6 text-accent">Les Ministères</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {ministries.map(ministry => (
+          <a 
+            href={ministry.link}
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <h3 class="text-xl font-bold mb-2">{ministry.name}</h3>
+            <p class="text-gray-600">Ministre: {ministry.minister}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Government Mission -->
+    <section class="bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-accent">Mission du Gouvernement</h2>
+      <p class="text-gray-700 mb-4">
+        Le Gouvernement de Transition du Burkina Faso est engagé dans la restauration de l'intégrité territoriale,
+        la sécurisation du territoire, et la mise en œuvre de réformes structurelles pour le développement socio-économique du pays.
+      </p>
+      <p class="text-gray-700">
+        Sous la direction du Capitaine Ibrahim TRAORE, le gouvernement œuvre pour la consolidation de la paix,
+        le renforcement de la cohésion sociale et la promotion du développement durable au bénéfice de tous les Burkinabè.
+      </p>
+    </section>
+  </main>
+</Layout>

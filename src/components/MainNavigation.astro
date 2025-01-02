@@ -1,0 +1,44 @@
+---
+import { megaMenu } from '../data/menuData';
+---
+
+<nav class="bg-white border-b border-gray-200">
+  <div class="container mx-auto px-4">
+    <ul class="flex justify-center space-x-8">
+      {Object.entries(megaMenu).map(([key, category]) => (
+        <li class="group relative py-4">
+          <button class="flex items-center space-x-1 text-gray-700 hover:text-accent">
+            <span>{category.title}</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div class="hidden group-hover:block absolute left-1/2 transform -translate-x-1/2 w-screen max-w-7xl bg-white shadow-lg z-50 border-t border-gray-200 rounded-b-lg">
+            <div class="container mx-auto px-4 py-6">
+              <div class="grid grid-cols-3 gap-8">
+                {category.sections.map((section) => (
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-accent">{section.title}</h3>
+                    <ul class="space-y-2">
+                      {section.links.map((link) => (
+                        <li>
+                          <a 
+                            href={link.url}
+                            class="text-gray-600 hover:text-accent transition-colors"
+                          >
+                            {link.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

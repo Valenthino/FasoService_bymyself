@@ -1,0 +1,33 @@
+---
+import MinistryLayout from '../../layouts/MinistryLayout.astro';
+---
+
+<MinistryLayout 
+  title="Ministère de l'Éducation"
+  minister="Dr. Joseph André Ouédraogo"
+  description="Le Ministère de l'Éducation est chargé de la mise en œuvre de la politique nationale en matière d'éducation, d'enseignement et de formation."
+>
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Nos missions</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Développement de l'éducation nationale</li>
+      <li>Formation des enseignants</li>
+      <li>Gestion des établissements scolaires</li>
+      <li>Programmes éducatifs</li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="#" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+        <h3 class="font-bold mb-2">Inscription scolaire</h3>
+        <p>Procédures d'inscription dans les établissements publics</p>
+      </a>
+      <a href="#" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+        <h3 class="font-bold mb-2">Bourses d'études</h3>
+        <p>Informations sur les bourses disponibles</p>
+      </a>
+    </div>
+  </section>
+</MinistryLayout>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <title>Armoiries du Burkina Faso</title>
+  <g fill="none" stroke="#000" stroke-width="2">
+    <path d="M250,50 h150 q20,0 20,20 v300 q0,20 -20,20 h-300 q-20,0 -20,-20 v-300 q0,-20 20,-20 h150" fill="#EDEFF3"/>
+    <path d="M200,150 h100 v50 h-100 z" fill="#E31B23"/>
+    <path d="M200,200 h100 v50 h-100 z" fill="#009E49"/>
+    <polygon points="250,175 265,210 235,210" fill="#FCD116"/>
+    <g transform="translate(100,250)">
+      <path d="M0,0 q100,-50 200,0" fill="none"/>
+      <text x="60" y="-20" fill="#153B3C" font-family="serif" font-size="24">BURKINA FASO</text>
+      <text x="40" y="40" fill="#153B3C" font-family="serif" font-size="16">Unité - Progrès - Justice</text>
+    </g>
+    <path d="M150,100 q-20,50 0,100" stroke="#034671"/>
+    <path d="M350,100 q20,50 0,100" stroke="#034671"/>
+  </g>
+</svg>

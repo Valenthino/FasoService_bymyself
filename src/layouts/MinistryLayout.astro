@@ -1,0 +1,26 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  minister: string;
+  description: string;
+}
+
+const { title, minister, description } = Astro.props;
+---
+
+<Layout title={title}>
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">{title}</h1>
+      <div class="bg-gray-100 p-6 rounded-lg mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Ministre</h2>
+        <p class="text-lg mb-4">{minister}</p>
+        <h3 class="text-xl font-semibold mb-2">À propos</h3>
+        <p class="text-gray-700">{description}</p>
+      </div>
+      <slot />
+    </div>
+  </main>
+</Layout>

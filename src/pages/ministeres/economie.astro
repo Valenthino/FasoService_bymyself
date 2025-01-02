@@ -1,0 +1,33 @@
+---
+import MinistryLayout from '../../layouts/MinistryLayout.astro';
+---
+
+<MinistryLayout 
+  title="Ministère de l'Économie"
+  minister="Dr. Aboubakar Nacanabo"
+  description="Le Ministère de l'Économie est responsable de la politique économique et financière du Burkina Faso. Il assure la gestion des finances publiques et la coordination de l'action économique du gouvernement."
+>
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Nos missions</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Élaboration et mise en œuvre de la politique économique</li>
+      <li>Gestion des finances publiques</li>
+      <li>Coordination avec les partenaires internationaux</li>
+      <li>Supervision du système bancaire</li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Services aux citoyens</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="#" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+        <h3 class="font-bold mb-2">Déclaration d'impôts</h3>
+        <p>Informations sur la déclaration et le paiement des impôts</p>
+      </a>
+      <a href="#" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+        <h3 class="font-bold mb-2">Marchés publics</h3>
+        <p>Consultation des appels d'offres publics</p>
+      </a>
+    </div>
+  </section>
+</MinistryLayout>

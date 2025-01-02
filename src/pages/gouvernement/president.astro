@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { currentGovernment } from '../../data/government';
+
+const { president } = currentGovernment;
+---
+
+<Layout title="Président de la Transition">
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8 text-primary">{president.name}</h1>
+      
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-6">
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold text-accent mb-4">Président de la Transition</h2>
+            <p class="text-gray-700 mb-4">En fonction depuis le {president.appointed}</p>
+            <div class="prose max-w-none">
+              <p>{president.biography}</p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-bold mb-4">Priorités de la Transition</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              {currentGovernment.priorities.map(priority => (
+                <li class="text-gray-700">{priority}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Accueil">
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-[#1C578A] text-white py-16">
+			<div class="container mx-auto px-4">
+				<h1 class="text-4xl md:text-6xl font-bold mb-6">Bienvenue au Burkina Faso</h1>
+				<p class="text-xl mb-8">Le portail officiel du gouvernement du Burkina Faso</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<a href="/services/citoyens" class="bg-white text-[#1C578A] p-6 rounded-lg hover:bg-gray-100">
+						<h2 class="text-xl font-bold mb-2">Services aux citoyens</h2>
+						<p>Accédez aux services gouvernementaux pour les citoyens</p>
+					</a>
+					<a href="/services/entreprises" class="bg-white text-[#1C578A] p-6 rounded-lg hover:bg-gray-100">
+						<h2 class="text-xl font-bold mb-2">Services aux entreprises</h2>
+						<p>Informations et ressources pour les entreprises</p>
+					</a>
+					<a href="/actualites" class="bg-white text-[#1C578A] p-6 rounded-lg hover:bg-gray-100">
+						<h2 class="text-xl font-bold mb-2">Actualités</h2>
+						<p>Dernières nouvelles et annonces gouvernementales</p>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Featured Services -->
+		<section class="py-12">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold mb-8">Services populaires</h2>
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+					<a href="/services/carte-identite" class="p-4 border rounded-lg hover:shadow-lg">
+						<h3 class="font-bold mb-2">Carte d'identité</h3>
+						<p class="text-gray-600">Demander ou renouveler votre carte d'identité</p>
+					</a>
+					<a href="/services/passeport" class="p-4 border rounded-lg hover:shadow-lg">
+						<h3 class="font-bold mb-2">Passeport</h3>
+						<p class="text-gray-600">Informations sur les passeports</p>
+					</a>
+					<a href="/services/permis" class="p-4 border rounded-lg hover:shadow-lg">
+						<h3 class="font-bold mb-2">Permis de conduire</h3>
+						<p class="text-gray-600">Obtenir ou renouveler votre permis</p>
+					</a>
+					<a href="/services/impots" class="p-4 border rounded-lg hover:shadow-lg">
+						<h3 class="font-bold mb-2">Impôts</h3>
+						<p class="text-gray-600">Déclaration et paiement des impôts</p>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- News Section -->
+		<section class="bg-gray-100 py-12">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold mb-8">Actualités récentes</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<article class="bg-white p-6 rounded-lg shadow">
+						<h3 class="font-bold text-xl mb-2">Nouvelle initiative gouvernementale</h3>
+						<p class="text-gray-600 mb-4">Le gouvernement lance un nouveau programme pour soutenir l'agriculture locale.</p>
+						<a href="/actualites/1" class="text-[#1C578A] hover:underline">Lire la suite →</a>
+					</article>
+					<article class="bg-white p-6 rounded-lg shadow">
+						<h3 class="font-bold text-xl mb-2">Réformes éducatives</h3>
+						<p class="text-gray-600 mb-4">Nouvelles mesures pour améliorer l'accès à l'éducation dans les zones rurales.</p>
+						<a href="/actualites/2" class="text-[#1C578A] hover:underline">Lire la suite →</a>
+					</article>
+					<article class="bg-white p-6 rounded-lg shadow">
+						<h3 class="font-bold text-xl mb-2">Infrastructure routière</h3>
+						<p class="text-gray-600 mb-4">Début des travaux de rénovation sur les axes principaux.</p>
+						<a href="/actualites/3" class="text-[#1C578A] hover:underline">Lire la suite →</a>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
