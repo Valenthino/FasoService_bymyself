@@ -5,29 +5,26 @@ import { megaMenu } from '../data/menuData';
 const categories = Object.keys(megaMenu);
 ---
 
-<nav class="w-full bg-[#26374A] text-white border-t border-gray-700">
+<div class="bg-[#26374A] text-white border-b border-gray-700">
   <div class="container mx-auto">
-    <ul class="flex flex-wrap justify-center text-sm md:text-base">
+    <nav class="flex justify-center">
       {categories.map(category => (
-        <li class="group relative">
-          <button 
-            class="px-4 py-3 hover:bg-[#1a2736] flex items-center gap-2 transition-colors"
-            aria-expanded="false"
-          >
+        <div class="group relative">
+          <button class="px-6 py-4 hover:bg-[#1a2736] transition-colors flex items-center gap-2">
             <span>{megaMenu[category].title}</span>
             <svg 
               class="w-4 h-4 transition-transform group-hover:rotate-180" 
-              viewBox="0 0 24 24" 
               fill="none" 
-              stroke="currentColor"
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
             >
-              <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           
-          <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute left-0 w-screen bg-white text-gray-800 shadow-xl border-t border-gray-200 transition-all duration-200">
-            <div class="container mx-auto p-6">
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div class="absolute left-0 w-screen invisible group-hover:visible opacity-0 group-hover:opacity-100 bg-white shadow-xl">
+            <div class="container mx-auto py-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
                 {megaMenu[category].sections.map(section => (
                   <div>
                     <h3 class="font-bold text-lg mb-4 text-[#26374A]">
@@ -38,7 +35,7 @@ const categories = Object.keys(megaMenu);
                         <li>
                           <a 
                             href={link.url}
-                            class="block text-gray-600 hover:text-[#26374A] hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
+                            class="text-gray-600 hover:text-[#26374A] hover:bg-gray-50 block px-3 py-2 rounded-md transition-colors"
                           >
                             {link.title}
                           </a>
@@ -50,15 +47,14 @@ const categories = Object.keys(megaMenu);
               </div>
             </div>
           </div>
-        </li>
+        </div>
       ))}
-    </ul>
+    </nav>
   </div>
-</nav>
+</div>
 
 <style>
-  /* Pour s'assurer que le menu déroulant reste visible pendant le hover */
-  .group:hover .group-hover\:visible {
-    display: block;
-  }
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
 </style>
