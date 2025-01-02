@@ -1,37 +1,50 @@
 ---
+// src/components/MegaMenu.astro
 import { megaMenu } from '../data/menuData';
 
-interface Props {
-  isOpen: boolean;
-  category: string;
-}
-
-const { isOpen, category } = Astro.props;
-const menuData = megaMenu[category];
+const categories = Object.keys(megaMenu);
 ---
 
-{isOpen && menuData && (
-  <div class="absolute left-0 w-full bg-white shadow-lg z-50 border-t border-gray-200">
-    <div class="container mx-auto px-4 py-6">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {menuData.sections.map((section) => (
-          <div>
-            <h3 class="font-bold text-lg mb-4 text-accent">{section.title}</h3>
-            <ul class="space-y-2">
-              {section.links.map((link) => (
-                <li>
-                  <a 
-                    href={link.url}
-                    class="text-gray-600 hover:text-accent transition-colors"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+<div class="w-full bg-accent text-white">
+  <div class="container mx-auto">
+    <nav class="relative">
+      <ul class="flex">
+        {categories.map(category => (
+          <li class="group relative">
+            <button class="px-4 py-3 hover:bg-primary-dark flex items-center space-x-1">
+              <span>{megaMenu[category].title}</span>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            
+            <!-- Dropdown -->
+            <div class="absolute left-0 hidden group-hover:block w-screen bg-white text-gray-800 shadow-lg border-t border-gray-200">
+              <div class="container mx-auto px-4 py-6">
+                <div class="grid grid-cols-3 gap-8">
+                  {megaMenu[category].sections.map(section => (
+                    <div>
+                      <h3 class="font-bold text-lg mb-4 text-primary">{section.title}</h3>
+                      <ul class="space-y-2">
+                        {section.links.map(link => (
+                          <li>
+                            <a 
+                              href={link.url}
+                              class="text-gray-600 hover:text-primary transition-colors"
+                            >
+                              {link.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </nav>
   </div>
-)}
+</div>
